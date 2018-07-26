@@ -54,12 +54,12 @@ Select-Window devenv | Select-ChildWindow | Send-Click 10 10 -Double
 }}
 
 ### Automation cmdlets
-* Select-Window - pick windows by process name or window caption (with wildcard support)
-* Select-ChildWindow - pick all owned **windows** of another window (eg: dialogs, tool windows)
-* Select-Control - pick controls (children) of a specific window, by class and/or name and/or index (with wildcard support) -- NOTE: the "Window" can be specified as "-Window 0" to get all parentless windows, which includes windows, dialogs, tooltips, etc... With **-Window 0** this returns a true superset of the Select-Window output.
+* Select-Window - Pick windows by process name or window caption (with wildcard support)
+* Select-ChildWindow - Pick all owned **windows** of another window (e.g., dialogs, tool windows)
+* Select-Control - Pick controls (children) of a specific window, by class and/or name and/or index (with wildcard support) -- NOTE: the "Window" can be specified as "-Window 0" to get all parentless windows, which includes windows, dialogs, tooltips, etc... With **-Window 0** this returns a true superset of the Select-Window output.
 * Send-Click - send mouse clicks (any button, with any modifier keys)
 * Send-Keys - [Windows.Forms.SendKeys](http://msdn2.microsoft.com/en-us/library/system.windows.forms.sendkeys) lets you send keys ... try this: {{Select-Window notepad | Send-Keys "%(ea)Testing{Enter}{F5}"}} (and for extra fun, try it with multiple notepad windows open).
-* Set-WindowActive - yeah, just activates the window
-* Set-WindowPosition - set any one of (or all of) top, left, width, height on a window ... or maximize/minimize/restore
-* Get-WindowPosition - get the position (kind-of redundant, actually, since the Window object has it's position as a property)
-* Remove-Window - closes the specified window
+* Set-WindowActive - Simply activates the window
+* Set-WindowPosition - Set any one of (or all of) top, left, width, height on a window ... or maximize/minimize/restore
+* Get-WindowPosition - Get the position (kind-of redundant, actually, since the Window object has it's position as a property)
+* Remove-Window - Closes the specified window
