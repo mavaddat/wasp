@@ -1,11 +1,11 @@
 ## WASP
-![](Home_WASP.png) WASP is a PowerShell snapin for Windows Automation tasks like selecting windows and controls and sending mouse and keyboard events. We have [automation cmdlets](automation-cmdlets) like Select-Window, Select-Control, Send-Keys, Send-Click, Get-WindowPosition, Set-WindowPosition, Set-WindowActive, Remove-Window ... etc.
+![](Home_WASP.png) WASP is a PowerShell snapin for Windows Automation tasks like selecting windows and controls and sending mouse and keyboard events. WASP has [automation cmdlets](#automation-cmdlets) like Select-Window, Select-Control, Send-Keys, Send-Click, Get-WindowPosition, Set-WindowPosition, Set-WindowActive, Remove-Window ... etc.
 
 Its goal is to enable Windows GUI Automation scripting from inside PowerShell without resorting to specialized scripting tools. 
 
 Just to be clear, don't expect any "click to record" functionality ... but do expect to be able to automatically tile windows, send mouse clicks and keystrokes, and in general, automate those tasks that you would normally not be able to do from a console.
 
-### [Some Usage Examples](Some-Usage-Examples)
+### Some Usage Examples
 ### Author's standard demo:
 {{
 ## Open a couple windows
