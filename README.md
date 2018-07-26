@@ -53,7 +53,7 @@ Select-Window notepad | Select -First 1 | Remove-Window -Passthru |
 Select-Window devenv | Select-ChildWindow | Send-Click 10 10 -Double 
 }}
 
-### [Automation cmdlets](automation-cmdlets)
+### Automation cmdlets
 * Select-Window - pick windows by process name or window caption (with wildcard support)
 * Select-ChildWindow - pick all owned **windows** of another window (eg: dialogs, tool windows)
 * Select-Control - pick controls (children) of a specific window, by class and/or name and/or index (with wildcard support) -- NOTE: the "Window" can be specified as "-Window 0" to get all parentless windows, which includes windows, dialogs, tooltips, etc... With **-Window 0** this returns a true superset of the Select-Window output.
