@@ -1,5 +1,5 @@
 ## WASP
-![](Home_WASP.png) WASP is a PowerShell snapin for Windows Automation tasks like selecting windows and controls and sending mouse and keyboard events. WASP has [automation cmdlets](#automation-cmdlets) like Select-Window, Select-Control, Send-Keys, Send-Click, Get-WindowPosition, Set-WindowPosition, Set-WindowActive, Remove-Window ... etc.
+WASP is a PowerShell snapin for Windows Automation tasks like selecting windows and controls and sending mouse and keyboard events. WASP has [automation cmdlets](#automation-cmdlets) like Select-Window, Select-Control, Send-Keys, Send-Click, Get-WindowPosition, Set-WindowPosition, Set-WindowActive, Remove-Window ... etc.
 
 Its goal is to enable Windows GUI Automation scripting from inside PowerShell without resorting to specialized scripting tools. 
 
@@ -7,7 +7,8 @@ Just to be clear, don't expect any "click to record" functionality ... but do ex
 
 ### Some Usage Examples
 ### Author's standard demo:
-{{
+
+```
 ## Open a couple windows
 notepad.exe
 explorer.exe
@@ -45,13 +46,13 @@ Select-Window notepad | Select -First 1 | Remove-Window -Passthru |
 ## But now we have the new -Recurse parameter, so it's easy.  Just find the window you want and ...
 Select-Window notepad | Select -First 1 | Remove-Window -Passthru | 
    Select-childwindow | select-control -title "Do&n't Save"  -recurse | Send-Click
-}}
+```
 
 ### Author's favorite use: re-dock all visual studio tool windows
-{{
+```powershell
 ## NOTE: 0, 0 is the resize corner, so you need to specify X,Y coordinates for the click:
 Select-Window devenv | Select-ChildWindow | Send-Click 10 10 -Double 
-}}
+```
 
 ### Automation cmdlets
 * Select-Window - Pick windows by process name or window caption (with wildcard support)
