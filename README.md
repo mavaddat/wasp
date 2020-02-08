@@ -3,7 +3,7 @@
 
 Its goal is to enable Windows GUI Automation scripting from inside PowerShell without resorting to specialized scripting tools. 
 
-Just to be clear, don't expect any "click to record" functionality ... but do expect to be able to automatically tile windows, send mouse clicks and keystrokes, and in general, automate those tasks that you would normally not be able to do from a console.
+Just to be clear, don't expect any "click to record" functionality &hellip; but, *do* expect to be able to automatically tile windows, send mouse clicks and keystrokes, and in general, automate those tasks that you would normally not be able to do from a console.
 
 ### Some Usage Examples
 #### Author's standard demo:
@@ -30,7 +30,7 @@ Just to be clear, don't expect any "click to record" functionality ... but do ex
 ##### Close the next notepad window ... 
 ##### By asking nicely (Remove-Window) and then hitting "n" for "Don't Save"
 ##### If there are no popups, Select-ChldWindow returns nothing, and that's the end of it
-    Select-Window notepad | Select -First 1 | Remove-Window -Passthru | 
+    Select-Window notepad | Select -First 1 | Remove-Window -Passthru | `
       Select-ChildWindow | Send-Keys "n"
 ##### Close the next notepad window the hard way 
 ##### Just to show off that our "Window" objects have a ProcessID and can be piped to kill
@@ -39,14 +39,13 @@ Just to be clear, don't expect any "click to record" functionality ... but do ex
 ##### Notice how I dive in through several layers of Select-Control to find the button?
 ##### This can only work experimentally: 
 ##### use SPY++, or run the line repeatedly, adding "|Select-Control" until you see the one you want
-    Select-Window notepad | Select -First 1 | Remove-Window -Passthru | 
+    Select-Window notepad | Select -First 1 | Remove-Window -Passthru | `
       Select-childwindow | select-control| select-control| select-control -title "Do&n't Save" | Send-Click
 ##### But now we have the new -Recurse parameter, so it's easy.  Just find the window you want and ...
-    Select-Window notepad | Select -First 1 | Remove-Window -Passthru | 
+    Select-Window notepad | Select -First 1 | Remove-Window -Passthru | `
       Select-childwindow | select-control -title "Do&n't Save"  -recurse | Send-Click
 
-
-#### Author's favorite use: re-dock all visual studio tool windows
+#### Author's favourite use: Re-dock all Visual Studio Tool windows
 
 ###### NOTE: 0, 0 is the resize corner, so you need to specify X,Y coordinates for the click:
     Select-Window devenv | Select-ChildWindow | Send-Click 10 10 -Double 
