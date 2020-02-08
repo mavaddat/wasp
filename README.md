@@ -3,7 +3,7 @@
 
 Its goal is to enable Windows GUI Automation scripting from inside PowerShell without resorting to specialized scripting tools. 
 
-Just to be clear, don't expect any "click to record" functionality &hellip; but, *do* expect to be able to automatically tile windows, send mouse clicks and keystrokes, and in general, automate those tasks that you would normally not be able to do from a console.
+Just to be clear, don't expect any ["click to record" functionality](https://www.macosxautomation.com/automator/features/virtual-user.html) &hellip; but, *do* expect to be able to automatically tile windows, send mouse clicks and keystrokes, and in general, automate those tasks that you would normally not be able to do from a console.
 
 ### Some Usage Examples
 #### Author's standard demo:
