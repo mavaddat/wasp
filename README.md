@@ -25,8 +25,7 @@ Just to be clear, don't expect any "click to record" functionality ... but do ex
     Select-Window notepad | Send-Keys "this is a test"
 ##### Close the first notepad window by pressing ALT+F4, and pressing Alt+N
 ###### In this case, you don't have to worry about shifting focus to the popup, because it's modal
-###### THE PROBLEM with sending keys like that is:
-######    if there is no confirmation dialog because the file is unchanged, the Alt+N still gets sent
+###### THE PROBLEM with sending keys like that is:<br/>&Tab;&Tab;if there is no confirmation dialog because the file is unchanged, the Alt+N still gets sent
     Select-Window notepad | Select -First 1 | Send-Keys "%{F4}%n"
 ##### Close the next notepad window ... 
 ##### By asking nicely (Remove-Window) and then hitting "n" for "Don't Save"
