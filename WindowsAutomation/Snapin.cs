@@ -19,36 +19,33 @@
 // http://www.codeplex.com/WASP/Project/License.aspx
 //
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Management.Automation;
 using System.ComponentModel;
+using System.Management.Automation;
 
-namespace Huddled.Wasp
+namespace Mavaddat.Wasp
 {
-	[RunInstaller(true)]
-	public class WindowsAutomationSnapIn : PSSnapIn
-	{
-		public override string Name
-		{
-			get { return "WASP"; }
-		}
-		public override string Vendor
-		{
-			get { return "HuddledMasses.org"; }
-		}
-		public override string VendorResource
-		{
+    [RunInstaller(true)]
+    public class WindowsAutomationSnapIn : PSSnapIn
+    {
+        public override string Name
+        {
+            get { return "WASP"; }
+        }
+        public override string Vendor
+        {
+            get { return "HuddledMasses.org"; }
+        }
+        public override string VendorResource
+        {
             get { return "WASP, HuddledMasses.org"; }
-		}
-		public override string Description
-		{
-			get { return "The Windows Automation Snapin Project has PowerShell cmdlets for enumerating, moving, and managing application windows, as well as sending clicks and keystrokes"; }
-		}
-		public override string DescriptionResource
-		{
-			get { return "WASP, Registers the Windows Automation Snapin cmdlets"; }
-		}
-	}
+        }
+        public override string Description
+        {
+            get { return "The Windows Automation Snapin Project has PowerShell cmdlets for enumerating, moving, and managing application windows, as well as sending clicks and keystrokes"; }
+        }
+        public override string DescriptionResource
+        {
+            get { return "WASP, Registers the Windows Automation Snapin cmdlets"; }
+        }
+    }
 }

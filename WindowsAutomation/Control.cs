@@ -20,11 +20,8 @@
 //
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace Huddled.Wasp
+namespace Mavaddat.Wasp
 {
     /// <summary>
     /// An implementation of <see cref="WindowHandle"/> for control windows

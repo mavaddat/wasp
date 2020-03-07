@@ -19,20 +19,18 @@
 // http://www.codeplex.com/WASP/Project/License.aspx
 //
 
-using System;
 using System.Management.Automation;
-using System.Runtime.InteropServices;
 using System.Windows.Automation;
 
 namespace Huddled.Wasp
 {
-   [Cmdlet(VerbsCommon.Set, "Focus", DefaultParameterSetName = "Default", SupportsShouldProcess = true)]
-   public class SendFocusCommand : AutomationElementCmdletBase
-   {
-      public override void ProcessAutomationElement(AutomationElement element)
-      {
-         // TODO: if(!hWnd.IsInvalid) hWnd.Activate();
-         element.SetFocus();
-      }
-   }
+    [Cmdlet(VerbsCommon.Set, "Focus", DefaultParameterSetName = "Default", SupportsShouldProcess = true)]
+    public class SendFocusCommand : AutomationElementCmdletBase
+    {
+        public override void ProcessAutomationElement(AutomationElement element)
+        {
+            // TODO: if(!hWnd.IsInvalid) hWnd.Activate();
+            element.SetFocus();
+        }
+    }
 }

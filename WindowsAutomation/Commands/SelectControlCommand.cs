@@ -20,25 +20,24 @@
 //
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Management.Automation;
 
-namespace Huddled.Wasp
+namespace Mavaddat.Wasp
 {
     [Cmdlet(VerbsCommon.Select, "Control", DefaultParameterSetName = "Name")]
     public class SelectControlCommand : Cmdlet
     {
 
         [Alias("WindowPointer", "hWnd", "WindowHandle", "Control", "ControlHandle", "Handle", "ControlPointer")]
-        [Parameter(Mandatory = true,  ParameterSetName = "Name",  ValueFromPipeline = true)]
-        [Parameter(Mandatory = true,  ParameterSetName = "Class", ValueFromPipeline = true)]
+        [Parameter(Mandatory = true, ParameterSetName = "Name", ValueFromPipeline = true)]
+        [Parameter(Mandatory = true, ParameterSetName = "Class", ValueFromPipeline = true)]
         public WindowHandle Window { get; set; }
 
-        [Parameter(Mandatory = true,  Position = 1,  ParameterSetName = "Class")]
-        public string Class { 
-            get{
+        [Parameter(Mandatory = true, Position = 1, ParameterSetName = "Class")]
+        public string Class
+        {
+            get
+            {
                 return (_class == null) ? null : _class.ToString();
             }
             set
@@ -49,10 +48,11 @@ namespace Huddled.Wasp
 
         WildcardPattern _class;
 
-		  [Alias("Caption", "Text")]
-        [Parameter(Mandatory = false, Position = 5,  ParameterSetName = "Class")]
-        [Parameter(Mandatory = false,                ParameterSetName = "Name")]
-        public string Title {
+        [Alias("Caption", "Text")]
+        [Parameter(Mandatory = false, Position = 5, ParameterSetName = "Class")]
+        [Parameter(Mandatory = false, ParameterSetName = "Name")]
+        public string Title
+        {
             get
             {
                 return (_title == null) ? null : _title.ToString();
@@ -69,37 +69,39 @@ namespace Huddled.Wasp
         [Parameter(Mandatory = false, Position = 10, ParameterSetName = "Name")]
         [Parameter(Mandatory = false, Position = 10, ParameterSetName = "Class")]
         public int Index
-        { 
-            get{
+        {
+            get
+            {
                 return _index.GetValueOrDefault(-1);
             }
-            set{
+            set
+            {
                 _index = value;
             }
         }
-		  private Nullable<int> _index = null;
+        private Nullable<int> _index = null;
 
 
-		  [Parameter()]
-		  public SwitchParameter Recurse { get; set; }
+        [Parameter()]
+        public SwitchParameter Recurse { get; set; }
 
 
         protected override void ProcessRecord()
         {
 
             int index = 0;
-				WindowFinder.ChildFinder finder = new WindowFinder.ChildFinder(Window);
-				var children = finder.FindAll();
-				foreach(var found in children) 
-			   {
+            WindowFinder.ChildFinder finder = new WindowFinder.ChildFinder(Window);
+            var children = finder.FindAll();
+            foreach (var found in children)
+            {
 
-				//IntPtr found = NativeMethods.FindWindowEx(Window, IntPtr.Zero, null, null);
-				//while (!found.Equals(IntPtr.Zero))
-				//{
-					if( (Recurse.ToBool() || found.GetParent() == Window.Handle)
-						 && (_class == null || _class.IsMatch(found.GetClassName() ?? ""))
-					    && (_title == null || _title.IsMatch(found.GetWindowText() ?? ""))
-                )
+                //IntPtr found = NativeMethods.FindWindowEx(Window, IntPtr.Zero, null, null);
+                //while (!found.Equals(IntPtr.Zero))
+                //{
+                if ((Recurse.ToBool() || found.GetParent() == Window.Handle)
+                     && (_class == null || _class.IsMatch(found.GetClassName() ?? ""))
+                    && (_title == null || _title.IsMatch(found.GetWindowText() ?? ""))
+            )
                 {
 
                     if (_index.HasValue)

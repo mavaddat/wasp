@@ -19,10 +19,9 @@
 // http://www.codeplex.com/WASP/Project/License.aspx
 //
 
-using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using System;
+using System.Reflection;
+using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
@@ -30,9 +29,9 @@ using System;
 [assembly: AssemblyTitle("WASP")]
 [assembly: AssemblyDescription("Windows Automation Snapin for PowerShell")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("HuddledMasses.org")]
+[assembly: AssemblyCompany("mavaddat.ca")]
 [assembly: AssemblyProduct("Windows Automation Snapin for PowerShell")]
-[assembly: AssemblyCopyright("Copyright © Joel Bennett 2007-2009")]
+[assembly: AssemblyCopyright("Copyright © Mavaddat Javid 2020-2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

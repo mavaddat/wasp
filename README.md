@@ -61,3 +61,5 @@ Just to be clear, don't expect any ["click to record" functionality](https://www
 * `Set-WindowPosition` - Set any one of (or all of) top, left, width, height on a window &hellip; or maximize/minimize/restore
 * `Get-WindowPosition` - Get the position (kind-of redundant, actually, since the Window object has it's position as a property)
 * `Remove-Window` - Closes the specified window
+
+<a href="https://www.vecteezy.com/free-vector/wasp">Wasp Vectors by Vecteezy</a>

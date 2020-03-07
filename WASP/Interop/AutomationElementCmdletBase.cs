@@ -20,42 +20,41 @@
 //
 
 using System.Management.Automation;
-using System.Runtime.InteropServices;
 using System.Windows.Automation;
 
 namespace Huddled.Wasp
 {
-	//[Cmdlet(VerbsDiagnostic.Test, "Window")]
-	[Cmdlet("Nothing", "Window", DefaultParameterSetName = "Default", SupportsShouldProcess = true)]
-   public abstract class AutomationElementCmdletBase : Cmdlet
-	{
-		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
-		[Parameter(Position = 100, Mandatory = true,
-			ValueFromPipeline = true, ValueFromPipelineByPropertyName = true,
-			HelpMessage = "A list of AutomationElements for this cmdlet to act on.")]
-      [Alias("Element")]
-      public AutomationElement[] Window { get; set; }
+    //[Cmdlet(VerbsDiagnostic.Test, "Window")]
+    [Cmdlet("Nothing", "Window", DefaultParameterSetName = "Default", SupportsShouldProcess = true)]
+    public abstract class AutomationElementCmdletBase : Cmdlet
+    {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [Parameter(Position = 100, Mandatory = true,
+            ValueFromPipeline = true, ValueFromPipelineByPropertyName = true,
+            HelpMessage = "A list of AutomationElements for this cmdlet to act on.")]
+        [Alias("Element")]
+        public AutomationElement[] Window { get; set; }
 
-		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Passthru")]
-		[Parameter]
-		public SwitchParameter Passthru { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Passthru")]
+        [Parameter]
+        public SwitchParameter Passthru { get; set; }
 
-      public abstract void ProcessAutomationElement(AutomationElement element);
+        public abstract void ProcessAutomationElement(AutomationElement element);
 
-		protected override void ProcessRecord()
-		{
-         foreach (AutomationElement w in Window)
-			{
-				if (ShouldProcess(w.ToString()))
-				{
-               ProcessAutomationElement(w);
-				}
+        protected override void ProcessRecord()
+        {
+            foreach (AutomationElement w in Window)
+            {
+                if (ShouldProcess(w.ToString()))
+                {
+                    ProcessAutomationElement(w);
+                }
 
-				if (Passthru.IsPresent && Passthru.ToBool())
-				{
-					WriteObject(w);
-				}
-			}
-		}
-	}
+                if (Passthru.IsPresent && Passthru.ToBool())
+                {
+                    WriteObject(w);
+                }
+            }
+        }
+    }
 }

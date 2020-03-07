@@ -20,49 +20,42 @@
 //
 
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Management.Automation;
 using System.Windows.Automation;
-using System.Collections;
-using System.Diagnostics;
-using System.Linq;
-using System.Windows;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace Huddled.Wasp
 {
-	[Cmdlet(VerbsCommon.Set, "Text", DefaultParameterSetName = "Click")]
-	public class SetTextCommand : PSCmdlet
-	{
-       [Parameter()]
-       public string Text { get; set; }
+    [Cmdlet(VerbsCommon.Set, "Text", DefaultParameterSetName = "Click")]
+    public class SetTextCommand : PSCmdlet
+    {
+        [Parameter()]
+        public string Text { get; set; }
 
-      [Parameter(ValueFromPipeline=true)]
-      public AutomationElement Target { get; set; }
+        [Parameter(ValueFromPipeline = true)]
+        public AutomationElement Target { get; set; }
 
-      protected override void ProcessRecord()
-      {
-         Target.SetFocus();
-         object textPattern = null;
-         object valuePattern = null;
+        protected override void ProcessRecord()
+        {
+            Target.SetFocus();
+            object textPattern = null;
+            object valuePattern = null;
 
 
 
-         if (Target.TryGetCurrentPattern(ValuePattern.Pattern, out valuePattern))
-         {
-            ((ValuePattern)valuePattern).SetValue(Text);
-         }
-         else if (Target.TryGetCurrentPattern(TextPattern.Pattern, out textPattern))
-         {
-            SendKeys.SendWait("^{HOME}");
-            SendKeys.SendWait("^+{END}");
-            SendKeys.SendWait("{DEL}");
-            SendKeys.SendWait(Text);
-         }
-         else throw new NotSupportedException("Setting the text on this element is not supported");
-      }
+            if (Target.TryGetCurrentPattern(ValuePattern.Pattern, out valuePattern))
+            {
+                ((ValuePattern)valuePattern).SetValue(Text);
+            }
+            else if (Target.TryGetCurrentPattern(TextPattern.Pattern, out textPattern))
+            {
+                SendKeys.SendWait("^{HOME}");
+                SendKeys.SendWait("^+{END}");
+                SendKeys.SendWait("{DEL}");
+                SendKeys.SendWait(Text);
+            }
+            else throw new NotSupportedException("Setting the text on this element is not supported");
+        }
 
-   }
+    }
 }

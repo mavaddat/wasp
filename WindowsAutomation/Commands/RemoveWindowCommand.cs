@@ -19,13 +19,9 @@
 // http://www.codeplex.com/WASP/Project/License.aspx
 //
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Management.Automation;
 
-namespace Huddled.Wasp
+namespace Mavaddat.Wasp
 {
     [Cmdlet(VerbsCommon.Remove, "Window", DefaultParameterSetName = "Default", SupportsShouldProcess = true)]
     public class RemoveWindowCommand : WindowCmdletBase

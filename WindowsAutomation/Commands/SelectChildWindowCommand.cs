@@ -20,32 +20,28 @@
 //
 
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Management.Automation;
-using System.Collections;
-using System.Diagnostics;
 
-namespace Huddled.Wasp
+namespace Mavaddat.Wasp
 {
-   [Cmdlet(VerbsCommon.Select, "ChildWindow", DefaultParameterSetName = "ProcessName")]
-	public class SelectChildWindowCommand : WindowCmdletBase
-   {
-		public override void ProcessWindow(WindowHandle hWnd)
-		{
-			WindowHandle found = (WindowHandle)NativeMethods.FindWindowEx(IntPtr.Zero, IntPtr.Zero, null, null);
-			while (!found.Equals(IntPtr.Zero))
-			{
-				if (NativeMethods.IsWindow(found.Handle) && 
-					 NativeMethods.IsWindowVisible(found.Handle) && 
-					(found.GetParentOrOwner() == hWnd.Handle)
-					)
-				{
-					WriteObject( found );
-				}
-				found = NativeMethods.FindWindowEx(IntPtr.Zero, found, null, null);
-			}
-		}
-		// select-control -window 0 | ? { $_.GetParent() -eq (select-window notepad) }
-   }
+    [Cmdlet(VerbsCommon.Select, "ChildWindow", DefaultParameterSetName = "ProcessName")]
+    public class SelectChildWindowCommand : WindowCmdletBase
+    {
+        public override void ProcessWindow(WindowHandle hWnd)
+        {
+            WindowHandle found = (WindowHandle)NativeMethods.FindWindowEx(IntPtr.Zero, IntPtr.Zero, null, null);
+            while (!found.Equals(IntPtr.Zero))
+            {
+                if (NativeMethods.IsWindow(found.Handle) &&
+                     NativeMethods.IsWindowVisible(found.Handle) &&
+                    (found.GetParentOrOwner() == hWnd.Handle)
+                    )
+                {
+                    WriteObject(found);
+                }
+                found = NativeMethods.FindWindowEx(IntPtr.Zero, found, null, null);
+            }
+        }
+        // select-control -window 0 | ? { $_.GetParent() -eq (select-window notepad) }
+    }
 }

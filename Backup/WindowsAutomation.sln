@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsAutomation", "WindowsAutomation\WindowsAutomation.csproj", "{DBC20F1B-3A0D-4247-88C1-6E3811211C8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WASP", "WASP\WASP.csproj", "{688520B1-C9D7-4664-8028-8839151C27CC}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs06.codeplex.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = WindowsAutomation\\WindowsAutomation.csproj
+		SccProjectName1 = WindowsAutomation
+		SccLocalPath1 = WindowsAutomation
+		SccProjectUniqueName2 = WASP\\WASP.csproj
+		SccProjectName2 = WASP
+		SccLocalPath2 = WASP
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DBC20F1B-3A0D-4247-88C1-6E3811211C8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBC20F1B-3A0D-4247-88C1-6E3811211C8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBC20F1B-3A0D-4247-88C1-6E3811211C8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{688520B1-C9D7-4664-8028-8839151C27CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{688520B1-C9D7-4664-8028-8839151C27CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{688520B1-C9D7-4664-8028-8839151C27CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{688520B1-C9D7-4664-8028-8839151C27CC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

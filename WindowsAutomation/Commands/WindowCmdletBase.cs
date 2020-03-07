@@ -21,16 +21,16 @@
 
 using System.Management.Automation;
 
-namespace Huddled.Wasp
+namespace Mavaddat.Wasp
 {
     //[Cmdlet(VerbsDiagnostic.Test, "Window")]
-    [Cmdlet("Nothing","Window", DefaultParameterSetName = "Default", SupportsShouldProcess= true)]
+    [Cmdlet("Nothing", "Window", DefaultParameterSetName = "Default", SupportsShouldProcess = true)]
     public abstract class WindowCmdletBase : Cmdlet
     {
-		  [Alias("Handle", "hWnd", "WindowHandle")]
-		  [Parameter(Position = 100, Mandatory=true,
-			  ValueFromPipeline = true, ValueFromPipelineByPropertyName= true, 
-			  HelpMessage = "A list of windows for this cmdlet to act on.")]
+        [Alias("Handle", "hWnd", "WindowHandle")]
+        [Parameter(Position = 100, Mandatory = true,
+            ValueFromPipeline = true, ValueFromPipelineByPropertyName = true,
+            HelpMessage = "A list of windows for this cmdlet to act on.")]
         public WindowHandle[] Window { get; set; }
 
         [Parameter]

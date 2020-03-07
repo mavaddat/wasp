@@ -19,21 +19,20 @@
 // http://www.codeplex.com/WASP/Project/License.aspx
 //
 
-using System;
 using System.Management.Automation;
 
-namespace Huddled.Wasp
+namespace Mavaddat.Wasp
 {
-	[Cmdlet(VerbsCommunications.Send, "Keys", DefaultParameterSetName = "Default", SupportsShouldProcess = true)]
+    [Cmdlet(VerbsCommunications.Send, "Keys", DefaultParameterSetName = "Default", SupportsShouldProcess = true)]
     public class SendKeysCommand : WindowCmdletBase
     {
         [Alias("Text", "Value")]
-	     [Parameter(Position = 1, Mandatory = true, ParameterSetName = "Default")]
+        [Parameter(Position = 1, Mandatory = true, ParameterSetName = "Default")]
         public string Keys { get; set; }
 
         public override void ProcessWindow(WindowHandle hWnd)
         {
-            if( hWnd > 0 ) hWnd.Activate();
+            if (hWnd > 0) hWnd.Activate();
             System.Windows.Forms.SendKeys.SendWait(Keys);
         }
     }

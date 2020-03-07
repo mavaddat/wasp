@@ -19,18 +19,16 @@
 // http://www.codeplex.com/WASP/Project/License.aspx
 //
 
-using System;
 using System.Management.Automation;
-using System.Runtime.InteropServices;
 using System.Windows.Automation;
 
 namespace Huddled.Wasp
 {
-	[Cmdlet(VerbsCommunications.Send, "Keys", DefaultParameterSetName = "Default", SupportsShouldProcess = true)]
-   public class SendKeysCommand : AutomationElementCmdletBase
+    [Cmdlet(VerbsCommunications.Send, "Keys", DefaultParameterSetName = "Default", SupportsShouldProcess = true)]
+    public class SendKeysCommand : AutomationElementCmdletBase
     {
         [Alias("Text", "Value")]
-	     [Parameter(Position = 1, Mandatory = true, ParameterSetName = "Default")]
+        [Parameter(Position = 1, Mandatory = true, ParameterSetName = "Default")]
         public string Keys { get; set; }
 
         public override void ProcessAutomationElement(AutomationElement element)

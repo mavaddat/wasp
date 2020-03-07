@@ -19,31 +19,27 @@
 // http://www.codeplex.com/WASP/Project/License.aspx
 //
 
+using Mavaddat.Wasp.NativeTypes;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Management.Automation;
-using System.Drawing;
-using Huddled.Wasp.NativeTypes;
 
-namespace Huddled.Wasp
+namespace Mavaddat.Wasp
 {
     [Cmdlet(VerbsCommon.Set, "WindowPosition", DefaultParameterSetName = "Default", SupportsShouldProcess = true)]
     public class SetWindowPositionCommand : WindowCmdletBase
     {
         [Alias("X")]
-		  [Parameter(Position = 1, Mandatory = false, ParameterSetName = "Default")]
+        [Parameter(Position = 1, Mandatory = false, ParameterSetName = "Default")]
         public int Left { get; set; }
 
         [Alias("Y")]
-		  [Parameter(Position = 2, Mandatory = false, ParameterSetName = "Default")]
+        [Parameter(Position = 2, Mandatory = false, ParameterSetName = "Default")]
         public int Top { get; set; }
 
-		  [Parameter(Position = 3, Mandatory = false, ParameterSetName = "Default")]
+        [Parameter(Position = 3, Mandatory = false, ParameterSetName = "Default")]
         public int Width { get; set; }
 
-		  [Parameter(Position = 4, Mandatory = false, ParameterSetName = "Default")]
+        [Parameter(Position = 4, Mandatory = false, ParameterSetName = "Default")]
         public int Height { get; set; }
 
         [Parameter(Mandatory = true, Position = 1, ParameterSetName = "Maximize")]
@@ -52,7 +48,7 @@ namespace Huddled.Wasp
         [Parameter(Mandatory = true, Position = 1, ParameterSetName = "Minimize")]
         public SwitchParameter Minimize { get; set; }
 
-		  [Parameter(ParameterSetName = "Default")]
+        [Parameter(ParameterSetName = "Default")]
         public SwitchParameter Restore { get; set; }
 
 

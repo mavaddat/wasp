@@ -19,15 +19,11 @@
 // http://www.codeplex.com/WASP/Project/License.aspx
 //
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Management.Automation;
 
-namespace Huddled.Wasp
+namespace Mavaddat.Wasp
 {
-	[Cmdlet(VerbsCommon.Set, "WindowActive", DefaultParameterSetName = "Default", SupportsShouldProcess = true)]
+    [Cmdlet(VerbsCommon.Set, "WindowActive", DefaultParameterSetName = "Default", SupportsShouldProcess = true)]
     public class SetWindowActiveCommand : WindowCmdletBase
     {
         public override void ProcessWindow(WindowHandle hWnd)
