@@ -43,9 +43,15 @@ If you see other paths listed in your environment variable, it may be from progr
 
 Now that we know where to put new modules, let's move to step 2.
 
-## Step 2: Copy new module to path
+## Step 2: Ensure DLL is in the WASP directory
 
-The next step is to copy WASP into one of the two paths identified in [step 1](#step-1-determine-the-install-path). Here, we'll make it available to all users by copying it to the `$env:ProgramFiles` destination
+Check that you have the `WASP.dll` from the releases in the WASP module directory.
+
+![DLL in WASP module path](dll.png)
+
+## Step 3: Copy new module to path
+
+The next step is to copy WASP containing the `WASP.dll` into one of the two paths identified in [step 1](#step-1-determine-the-install-path). Here, we'll make it available to all users by copying it to the `$env:ProgramFiles` destination
 
 `C:\Program Files\WindowsPowerShell\Modules`
 
@@ -67,7 +73,7 @@ The screenshot below is what returns when I run this command. I can see that the
 
 Now that the new module is installed we still have one final step before we can use the new commands.
 
-## Step 3: Import new module
+## Step 4: Import new module
 
 Importing loads the module into active memory so that we can access the module in our session.
 
