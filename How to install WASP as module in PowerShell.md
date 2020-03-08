@@ -1,6 +1,6 @@
 # How to install WASP as module in PowerShell
 
-This is an instructional summary of how to install the WASP as a module. Adapted from Robert Allen's tutorial on Active Directory Pro.<sup>[1](#allen)</sup>
+This is an instructional summary of how to install the WASP as a module. Adapted from Robert Allen's tutorial on Active Directory Pro.<a name="one"></a><sup>[1](#allen)</sup>
 
 ## Step 1: Choose your module install path
 
@@ -85,5 +85,5 @@ Import-Module -name WASP
 
 That will do it, the new module is now ready to use.
 
-<a name="allen">1</a>:
+<a name="allen" href="one">1</a>:
 Allen, Robert. “How to Install PowerShell Modules.” Active Directory Pro, Active Directory Pro, 9 June 2018, activedirectorypro.com/install-powershell-modules/.
