@@ -83,7 +83,11 @@ To import run the following command
 Import-Module -name WASP
 ```
 
-That will do it, the new module is now ready to use.
+That will do it &mdash; the new module is now ready to use.
+
+```powershell
+if(Get-InstalledModule -Name WASP -ErrorAction Ignore) {Import-Module PSReleaseTools; Install-PSPreview -mode Passive} else {$false}
+```
 
 <a name="allen" href="one">1</a>:
 Allen, Robert. “How to Install PowerShell Modules.” Active Directory Pro, Active Directory Pro, 9 June 2018, activedirectorypro.com/install-powershell-modules/.
