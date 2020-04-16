@@ -96,7 +96,7 @@ Import-Module -name WASP
 That will do it &mdash; the WASP module is now ready to use.
 
 ```powershell
-if(Get-InstalledModule -Name WASP -ErrorAction Ignore) {Import-Module PSReleaseTools; Install-PSPreview -mode Passive} else {$false}
+if(Get-InstalledModule -Name WASP -ErrorAction Ignore) {Get-Module -ListAvailable -Name WASP | Import-Module} else {Write-Host "You need to install the module first. See https://github.com/mavaddat/wasp/How_to_install_WASP_as_module_in_PowerShell.md" -ForegroundColor Red}
 ```
 
 <a name="allen" href="one">1</a>:
