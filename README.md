@@ -1,11 +1,20 @@
-## WASP
+# WASP
 <img src="wasp.png" width="88"> WASP is a PowerShell snapin for Windows Automation tasks like selecting windows and controls and sending mouse and keyboard events. WASP has [automation cmdlets](#automation-cmdlets) like `Select-Window`, `Select-Control`, `Send-Keys`, `Send-Click`, `Get-WindowPosition`, `Set-WindowPosition`, `Set-WindowActive`, `Remove-Window` &hellip; etc.
 
 Its goal is to enable Windows GUI Automation scripting from inside PowerShell without resorting to specialized scripting tools. 
 
 Just to be clear, don't expect any ["click to record" functionality](https://www.macosxautomation.com/automator/features/virtual-user.html) &hellip; but, *do* expect to be able to automatically tile windows, send mouse clicks and keystrokes, and in general, automate those tasks that you would normally not be able to do from a console.
 
-### Some Usage Examples
+## How to install
+
+Download from [releases](/releases), and extract into a PowerShell module directory (e.g., you can try, `$env:PSModulePath -split ';' | Select-Object -First 1`). Use `Get-Module -ListAvailable -Name WASP | Import-Module` to make its cmdlets available to the shell. Detailed instructions here: [How to install WASP as module in PowerShell](How_to_install_WASP_as_module_in_PowerShell.md)
+
+ 1. [Choose your module install path](How_to_install_WASP_as_module_in_PowerShell.md#step-1-choose-your-module-install-path)
+ 2. [Ensure DLL is in the WASP directory](How_to_install_WASP_as_module_in_PowerShell.md#step-2-ensure-dll-is-in-the-wasp-directory)
+ 3. [Copy WASP DLL to module path and unblock it](How_to_install_WASP_as_module_in_PowerShell.md#step-3-copy-wasp-dll-to-module-path-and-unblock-it)
+ 4. [Import new module](How_to_install_WASP_as_module_in_PowerShell.md#step-4-import-new-module)
+
+## Some Usage Examples
 #### Author's standard demo:
 
 ##### Open a couple windows
