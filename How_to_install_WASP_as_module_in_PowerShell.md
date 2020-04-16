@@ -2,6 +2,11 @@
 
 This is an instructional summary of how to install the WASP as a module. Adapted from Robert Allen's tutorial on Active Directory Pro.<a name="one"></a><sup>[1](#allen)</sup>
 
+ 1. [Choose your module install path](#step-1-choose-your-module-install-path)
+ 2. [Ensure DLL is in the WASP directory](#step-2-ensure-dll-is-in-the-wasp-directory)
+ 3. [Copy WASP DLL to module path and unblock it](#step-3-copy-wasp-dll-to-module-path-and-unblock-it)
+ 4. [Import new module](#step-4-import-new-module)
+
 ## Step 1: Choose your module install path
 
 Install new modules in a path that is listed in the `PSModulePath` environment variable. To see the value of `PSModulePath` run the following command.
@@ -48,7 +53,7 @@ Now that we know where to put new modules, let's move to step 2.
 Check that you have the `WASP.dll` from [the releases](/releases) in the WASP module directory. 
 ![DLL in WASP module path](dll.png)
 
-## Step 3: Copy new module to path and unblock it
+## Step 3: Copy WASP DLL to module path and unblock it
 
 The next step is to copy WASP containing the `WASP.dll` into one of the two paths identified in [step 1](#step-1-determine-the-install-path). Here, we'll make it available to all users by copying it to the `$env:ProgramFiles` destination
 
