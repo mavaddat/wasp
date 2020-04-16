@@ -7,7 +7,7 @@ Just to be clear, don't expect any ["click to record" functionality](https://www
 
 ## How to install
 
-Download from [releases](/releases), and extract into a PowerShell module directory (e.g., you can try, `$env:PSModulePath -split ';' | Select-Object -First 1`). Use `Get-Module -ListAvailable -Name WASP | Import-Module` to make its cmdlets available to the shell. Detailed instructions here: [How to install WASP as module in PowerShell](How_to_install_WASP_as_module_in_PowerShell.md)
+Download from [releases](../../releases), and extract into a PowerShell module directory (e.g., you can try, `$env:PSModulePath -split ';' | Select-Object -First 1`). Use `Get-Module -ListAvailable -Name WASP | Import-Module` to make its cmdlets available to the shell. Detailed instructions here: [How to install WASP as module in PowerShell](How_to_install_WASP_as_module_in_PowerShell.md)
 
  1. [Choose your module install path](How_to_install_WASP_as_module_in_PowerShell.md#step-1-choose-your-module-install-path)
  2. [Ensure DLL is in the WASP directory](How_to_install_WASP_as_module_in_PowerShell.md#step-2-ensure-dll-is-in-the-wasp-directory)
