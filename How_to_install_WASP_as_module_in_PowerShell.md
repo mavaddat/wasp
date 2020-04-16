@@ -7,7 +7,7 @@ This is an instructional summary of how to install the WASP as a module. Adapted
 Install new modules in a path that is listed in the `PSModulePath` environment variable. To see the value of `PSModulePath` run the following command.
 
 ```powershell
-$env:PSModulePath | Split-String -Separator ';'
+$env:PSModulePath -split ';'
 ```
 
 Here is the result of running that command on my computer. You should see similar results.
@@ -45,11 +45,10 @@ Now that we know where to put new modules, let's move to step 2.
 
 ## Step 2: Ensure DLL is in the WASP directory
 
-Check that you have the `WASP.dll` from the releases in the WASP module directory.
-
+Check that you have the `WASP.dll` from [the releases](/releases) in the WASP module directory. 
 ![DLL in WASP module path](dll.png)
 
-## Step 3: Copy new module to path
+## Step 3: Copy new module to path and unblock it
 
 The next step is to copy WASP containing the `WASP.dll` into one of the two paths identified in [step 1](#step-1-determine-the-install-path). Here, we'll make it available to all users by copying it to the `$env:ProgramFiles` destination
 
@@ -57,7 +56,13 @@ The next step is to copy WASP containing the `WASP.dll` into one of the two path
 
 [![Powershell Module Install](modules.png)](modules.png)
 
-There it is. Just copy and paste the module into the path.
+There it is. Copy and paste or extract the module into the path.
+
+We also need to [ask Windows to unblock](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/unblock-file) the DLL, since the file is originally downloaded from the Internet.
+
+```powershell
+Unblock-File -Path "$env:ProgramFiles\WindowsPowerShell\Modules\WASP\WASP.dll"
+```
 
 Now let’s verify the new module is visible to PowerShell, run the following command:
 
@@ -83,7 +88,7 @@ To import run the following command
 Import-Module -name WASP
 ```
 
-That will do it &mdash; the new module is now ready to use.
+That will do it &mdash; the WASP module is now ready to use.
 
 ```powershell
 if(Get-InstalledModule -Name WASP -ErrorAction Ignore) {Import-Module PSReleaseTools; Install-PSPreview -mode Passive} else {$false}
