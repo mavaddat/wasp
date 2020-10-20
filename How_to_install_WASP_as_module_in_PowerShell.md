@@ -31,8 +31,8 @@ What are the other paths for?
 | The path below is reserved for modules that ship with Windows. ⚠ Microsoft recommends not using this location. |
 | --- |
 | ![PowerShell](Windows_PowerShell_icon-48x48.png)<br/><pre lang="powershell">$PSHome\Modules</pre> |
-| ![CMD](Cmd_icon.png) <br/><pre lang="cmd">cmd%Windir%\System32\WindowsPowerShell\v1.0\Modules</pre> |
-| You can also add your own paths, but unless you have a specific need, just stick with [the two safe paths listed](#two_safe_paths). |
+| ![CMD](Cmd_icon.png) <br/><pre lang="cmd">%Windir%\System32\WindowsPowerShell\v1.0\Modules</pre> |
+| You can also add your own paths, however, unless you have a specific need, just stick with [the two safe paths listed](#two_safe_paths). |
 
 If you see other paths listed in your environment variable, it may be from programs you have installed. Some programs will automatically add PowerShell commands to the variable after installation.
 
