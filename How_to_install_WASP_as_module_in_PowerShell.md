@@ -19,7 +19,7 @@ Here is the result of running that command on my computer. You should see simila
 
 [![`$env:ProgramFiles`\WindowsPowerShell\Modules\<Module Folder>\<Module Files>](powershell-env2.png)](powershell-env2.png)
 
-There may be several paths listed but there are two main paths you should use, they are:
+There may be several paths listed but there are <a id="two_safe_paths">**two safe paths**</a> you should use, they are:
 
 1. `$env:USERPROFILE`\Documents\WindowsPowerShell\Modules\
 2. `$env:ProgramFiles`\WindowsPowerShell\Modules\\&lt;Module📁&gt;\\&lt;Module📃📄's&gt;
@@ -28,21 +28,11 @@ Use the first path if you want the module to be available for a specific user. U
 
 What are the other paths for?
 
-The path below is reserved for modules that ship with Windows. Microsoft recommends not using this location.
-
-![PowerShell](Windows_PowerShell_icon-48x48.png)
-
-```powershell
-$PSHome\Modules
-```
-
-![CMD](Cmd_icon.png)
-
-```cmd
-%Windir%\System32\WindowsPowerShell\v1.0\Modules
-```
-
-You can also add your own paths, but unless you have a specific need, just stick with the two listed.
+| The path below is reserved for modules that ship with Windows. ⚠ Microsoft recommends not using this location. |
+| --- |
+| ![PowerShell](Windows_PowerShell_icon-48x48.png)<br/><pre lang="powershell">$PSHome\Modules</pre> |
+| ![CMD](Cmd_icon.png) <br/><pre lang="cmd">cmd%Windir%\System32\WindowsPowerShell\v1.0\Modules</pre> |
+| You can also add your own paths, but unless you have a specific need, just stick with [the two safe paths listed](#two_safe_paths). |
 
 If you see other paths listed in your environment variable, it may be from programs you have installed. Some programs will automatically add PowerShell commands to the variable after installation.
 
