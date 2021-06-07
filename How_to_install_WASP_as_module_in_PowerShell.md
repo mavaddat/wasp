@@ -9,13 +9,13 @@ This is an instructional summary of how to install the WASP as a module. This br
 
 ## Step 1: Choose your module install path
 
-Install the new module by creating a directory named `WASP` in one of the paths that listed in the `PSModulePath` environment variable.  (Or, you can move the directory `WASP` created by archive expansion in one of those paths.) To see the value of `PSModulePath` run the following command.
+Install the new module by creating a directory named `WASP` in one of the paths that are listed in the `PSModulePath` environment variable.  (Or, you can move the directory `WASP` created by archive expansion in one of those paths.) To see the value of `PSModulePath` run the following command.
 
 ```powershell
 $env:PSModulePath -split ';'
 ```
 
-Here is the result of running that command on my computer. (You should see similar results.)
+Here is the result of running that command on my computer (you should see similar results).
 
 [![`$env:ProgramFiles`\WindowsPowerShell\Modules\<Module Folder>\<Module Files>](powershell-env2.png)](powershell-env2.png)
 
