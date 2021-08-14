@@ -86,18 +86,30 @@ Import-Module -name WASP
 
 That will do it &mdash; the WASP module is now ready to use.
 
-| Here's a one-liner to import `WASP` if it is available: |
-|---|
-|  
+<table>
+<thead>
+<tr>
+<th>One-liner to import <code>WASP</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+ 
 ```powershell
 if(Get-InstalledModule -Name WASP -ErrorAction Ignore) {Get-Module -ListAvailable -Name WASP | Import-Module} else {Write-Host "You need to install the module first. See https://github.com/mavaddat/wasp/How_to_install_WASP_as_module_in_PowerShell.md" -ForegroundColor Red}
 ```
-|
+ </td>
+</tr>
+</tbody>
+</table>
 
+ 
+ 
 Did you run into a problem? If so, see the detailed instructions on Microsoft's docs website [here](https://docs.microsoft.com/en-us/powershell/scripting/developer/module/installing-a-powershell-module).
 
-<a name="allen" href="one">&#11180;&nbsp;1</a>:
+<a name="allen" href="#one">&#11180;&nbsp;1</a>:
 Allen, Robert. “How to Install PowerShell Modules.” Active Directory Pro, Active Directory Pro, 9 June 2018, activedirectorypro.com/install-powershell-modules/.
 
-<a name="install-modules-in-psmodulepath" href="two">&#11180;&nbsp;2</a>:
+<a alt="Link to go back to the top" name="install-modules-in-psmodulepath" href="#two">&#11180;&nbsp;2</a>:
 Installing a PowerShell Module - PowerShell | Microsoft Docs https://docs.microsoft.com/en-us/powershell/scripting/developer/module/installing-a-powershell-module#install-modules-in-psmodulepath
