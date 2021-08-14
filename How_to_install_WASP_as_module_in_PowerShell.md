@@ -40,7 +40,7 @@ Now that we know where to put new modules, let's move to step 2.
 
 ## Step 2: Ensure DLL is in the WASP directory
 
-Check that you have the `WASP.dll` from [the releases](/releases) in the `WASP` module directory.
+Check that you have the `WASP.dll` from [the releases](https://github.com/mavaddat/wasp/releases) in the `WASP` module directory.
 
 ![DLL in WASP module path](dll.png)
 
